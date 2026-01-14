@@ -1,253 +1,120 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Atlantiks Decor — Фасадная архитектура, Колонны, Гранит и Свет</title>
-
-    <link href="[подозрительная ссылка удалена]" rel="stylesheet">
-
+    <title>Atlantiks Decor — Высококонтрастный Дизайн</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-
         :root {
-
             --gold: #d4af37;
-
-            --night: #0a0e14;
-
-            --gray: #1a1a1a;
-
-            --white: #ffffff;
-
+            --night: #000000;
+            --pure-white: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--night); color: var(--pure-white); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; color: var(--gold); }
 
-        body { background-color: var(--night); color: var(--white); scroll-behavior: smooth; line-height: 1.6; }
-
-        h1, h2, h3, .logo { font-family: 'Cinzel', serif; letter-spacing: 2px; }
-
-        header { background: rgba(0,0,0,0.95); padding: 20px 0; position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid var(--gold); }
-
-        .container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-
-        .logo { font-size: 22px; color: var(--gold); text-decoration: none; font-weight: bold; }
-
-        .nav-tel { color: var(--gold); text-decoration: none; font-weight: bold; font-size: 16px; border: 1px solid var(--gold); padding: 8px 15px; transition: 0.3s; }
-
-        .nav-tel:hover { background: var(--gold); color: #000; }
-
-        .hero { 
-
-            height: 100vh;
-
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('facade-main.jpg') center/cover no-repeat;
-
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
-
+        /* HEADER: Черный фон, золотой контур */
+        header { 
+            background: #000; 
+            padding: 20px; 
+            position: fixed; 
+            width: 100%; 
+            z-index: 1000; 
+            border-bottom: 3px solid var(--gold); 
+        }
+        .nav-tel { 
+            color: #000; 
+            background: var(--gold); 
+            padding: 10px 25px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            border-radius: 5px; 
         }
 
-        .hero h1 { font-size: clamp(2rem, 8vw, 5rem); color: var(--gold); margin-bottom: 15px; line-height: 1.1; }
+        /* HERO: Текст на фоне картинки с затемнением */
+        .hero { 
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px #000; margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; color: #fff; text-transform: uppercase; letter-spacing: 5px; background: rgba(0,0,0,0.6); padding: 10px 30px; }
 
-        .hero p { font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; color: #ddd; margin-bottom: 40px; }
-
-        .section { padding: 100px 20px; max-width: 1200px; margin: auto; }
-
-        .section-title { text-align: center; margin-bottom: 60px; }
-
-        .section-title h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
-
-        .section-title p { color: #888; text-transform: uppercase; letter-spacing: 2px; }
-
-        .facade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-
-        .facade-card { background: #0d0d0d; border: 1px solid #222; overflow: hidden; transition: 0.4s; }
-
-        .facade-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-
+        /* КАРТОЧКИ: Белый текст на черном фоне */
+        .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        .facade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .facade-card { background: #111; border: 2px solid #333; overflow: hidden; }
+        .facade-card img { width: 100%; height: 250px; object-fit: cover; }
         .facade-content { padding: 30px; }
+        .facade-content h3 { margin-bottom: 20px; font-size: 1.8rem; }
+        
+        /* ЧИТАЕМЫЙ СПИСОК */
+        .facade-content ul { list-style: none; }
+        .facade-content li { 
+            color: #ffffff; /* Чисто белый текст */
+            font-size: 1.2rem; 
+            margin-bottom: 15px; 
+            padding-left: 30px; 
+            position: relative;
+            font-weight: 400;
+        }
+        .facade-content li::before { content: '✔'; position: absolute; left: 0; color: var(--gold); }
 
-        .facade-content h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.4rem; }
-
-        .facade-content ul { list-style: none; color: #bbb; }
-
-        .facade-content li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-
-        .facade-content li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
-
-        .tech-box { background: var(--gray); padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; border-left: 5px solid var(--gold); }
-
-        @media (max-width: 768px) { .tech-box { grid-template-columns: 1fr; padding: 30px; } }
-
-        .btn { display: inline-block; padding: 18px 45px; background: var(--gold); color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; transition: 0.3s; border: none; cursor: pointer; }
-
-        .btn:hover { background: #fff; box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
-
-        .footer { padding: 80px 20px; border-top: 1px solid #222; text-align: center; background: #050505; }
-
-        .footer p { color: #555; margin-bottom: 10px; }
-
+        .btn { 
+            display: inline-block; 
+            padding: 20px 40px; 
+            background: var(--gold); 
+            color: #000; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            text-decoration: none;
+            margin-top: 20px;
+        }
     </style>
-
 </head>
-
 <body>
-
-<header>
-
-    <div class="container">
-
-        <a href="/" class="logo">ATLANTIKS DECOR
-
-        <a href="tel:+79227201396" class="nav-tel">+7 (922) 720-13-96
-
-    
-
-</header>
-
-<section class="hero">
-
-     # ИСКУССТВО ФАСАДА # 
-
-    Архитектурный декор • Колонны • Искусственный камень
-
-    <a href="#facades" class="btn">Архитектурные решения
-
-</section>
-
-<section id="facades" class="section">
-
-    <div class="section-title">
-
-         ## Фасадная Огранка ## 
-
-        От идеи до финального монтажа элементов
-
-    
-
-    <div class="facade-grid">
-
-        <div class="facade-card">
-
-            <div class="facade-content">
-
-                Обрамление окон и дверей
-
-                
-
-                    Наличники и откосы из камня
-
-                    Подоконные плиты и сандрики
-
-                    Замковые камни и декор проемов
-
-                    Идеальная геометрия стыков
-
-                
-
-            
-
-        
-
-        <div class="facade-card">
-
-            <div class="facade-content">
-
-                Карнизы и Пояса
-
-                
-
-                    Венчающие (подкровельные) карнизы
-
-                    Межэтажные разделительные пояса
-
-                    Рустовые камни (углы здания)
-
-                    Скрытые системы крепления
-
-                
-
-            
-
-        
-
-        <div class="facade-card">
-
-            <div class="facade-content">
-
-                Колоннады и Балюстрады
-
-                
-
-                    Колонны любого диаметра и высоты
-
-                    Капители (ионические, дорические, коринфские)
-
-                    Балясины для балконов и террас
-
-                    Воспроизведение по вашим чертежам
-
-                
-
-            
-
-        
-
-    
-
-</section>
-
-<section class="section" style="background: #080808;">
-
-    <div class="tech-box">
-
-        
-
-            <h2 style="color: var(--gold); margin-bottom: 20px;">Индивидуальное Производство ## 
-
-            Мы не просто продаем типовые решения. Наше производство позволяет <strong>воспроизводить элементы любой сложности</strong> по эскизам.
-
-        
-
-        <div style="text-align: right;">
-
-            <a href="mailto:CEBEP74@gmail.com" class="btn">Заказать расчет фасада
-
-        
-
-    
-
-</section>
-
-<section class="section" style="text-align: center;">
-
-    <div style="border: 1px dashed var(--gold); padding: 60px; background: #0d0d0d;">
-
-        <h2 style="color: var(--gold); margin-bottom: 20px;">Приглашаем Инвесторов ## 
-
-        Собственная уникальная технология литья искусственного гранита. Ищем партнеров для масштабирования бизнеса.
-
-        <a href="mailto:CEBEP74@gmail.com" class="btn" style="background: transparent; border: 1px solid var(--gold); color: var(--gold);">Инвестиционный меморандум
-
-    
-
-</section>
-
-<footer class="footer">
-
-    <div class="logo">ATLANTIKS DECOR
-
-    Челябинская область. Почта: CEBEP74@gmail.com
-
-</footer>
-
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto;">
+            <div style="font-family: 'Cinzel'; color: var(--gold); font-size: 24px; font-weight: 700;">ATLANTIKS DECOR</div>
+            <a href="tel:+79227201396" class="nav-tel">+7 (922) 720-13-96</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>ATLANTIKS DECOR</h1>
+        <p>Фасады • Камень • Колонны</p>
+        <a href="#facades" class="btn">Смотреть проекты</a>
+    </section>
+
+    <section id="facades" class="section">
+        <h2 style="text-align: center; margin-bottom: 50px; font-size: 3rem;">Производство и Монтаж</h2>
+        <div class="facade-grid">
+            <div class="facade-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="Окна">
+                <div class="facade-content">
+                    <h3>Окна и Карнизы</h3>
+                    <ul>
+                        <li>Обрамление проемов</li>
+                        <li>Подоконники и сандрики</li>
+                        <li>Сложные формы окон</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="facade-card">
+                <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=800" alt="Колонны">
+                <div class="facade-content">
+                    <h3>Входные группы</h3>
+                    <ul>
+                        <li>Ступени из гранита</li>
+                        <li>Массивные колонны</li>
+                        <li>Балюстрады и перила</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-
 </html>
-
-```
