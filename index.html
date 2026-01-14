@@ -3,118 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlantiks Decor — Высококонтрастный Дизайн</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Atlantic's Decor — Фасадный декор и архитектурные решения</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #d4af37;
-            --night: #000000;
-            --pure-white: #ffffff;
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --gray: #333;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background-color: var(--night); color: var(--pure-white); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Cinzel', serif; color: var(--gold); }
-
-        /* HEADER: Черный фон, золотой контур */
-        header { 
-            background: #000; 
-            padding: 20px; 
-            position: fixed; 
-            width: 100%; 
-            z-index: 1000; 
-            border-bottom: 3px solid var(--gold); 
-        }
-        .nav-tel { 
-            color: #000; 
-            background: var(--gold); 
-            padding: 10px 25px; 
-            font-weight: 700; 
-            text-decoration: none; 
-            border-radius: 5px; 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
         }
 
-        /* HERO: Текст на фоне картинки с затемнением */
-        .hero { 
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
         }
-        .hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px #000; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; color: #fff; text-transform: uppercase; letter-spacing: 5px; background: rgba(0,0,0,0.6); padding: 10px 30px; }
 
-        /* КАРТОЧКИ: Белый текст на черном фоне */
-        .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-        .facade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .facade-card { background: #111; border: 2px solid #333; overflow: hidden; }
-        .facade-card img { width: 100%; height: 250px; object-fit: cover; }
-        .facade-content { padding: 30px; }
-        .facade-content h3 { margin-bottom: 20px; font-size: 1.8rem; }
-        
-        /* ЧИТАЕМЫЙ СПИСОК */
-        .facade-content ul { list-style: none; }
-        .facade-content li { 
-            color: #ffffff; /* Чисто белый текст */
-            font-size: 1.2rem; 
-            margin-bottom: 15px; 
-            padding-left: 30px; 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
             position: relative;
-            font-weight: 400;
         }
-        .facade-content li::before { content: '✔'; position: absolute; left: 0; color: var(--gold); }
 
-        .btn { 
-            display: inline-block; 
-            padding: 20px 40px; 
-            background: var(--gold); 
-            color: #000; 
-            font-weight: 700; 
-            text-transform: uppercase; 
+        /* Сетка услуг */
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            margin-top: 0;
+        }
+
+        /* Кнопка портфолио */
+        .btn-gallery {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 15px 40px;
+            background: var(--gold);
+            color: white;
             text-decoration: none;
-            margin-top: 20px;
+            font-weight: bold;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Колонки для партнеров */
+        .partner-cols {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .partner-col {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .partner-col h4 {
+            color: var(--gold);
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .accent-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .accent-list li::before {
+            content: "— ";
+            color: var(--gold);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto;">
-            <div style="font-family: 'Cinzel'; color: var(--gold); font-size: 24px; font-weight: 700;">ATLANTIKS DECOR</div>
-            <a href="tel:+79227201396" class="nav-tel">+7 (922) 720-13-96</a>
-        </div>
-    </header>
 
-    <section class="hero">
-        <h1>ATLANTIKS DECOR</h1>
-        <p>Фасады • Камень • Колонны</p>
-        <a href="#facades" class="btn">Смотреть проекты</a>
+<header>
+    <h1>ATLANTIC'S DECOR</h1>
+    <p>Архитектура • Производство • Монтаж</p>
+</header>
+
+<div class="container">
+    
+    <section>
+        <h2>Наше производство</h2>
+        <div class="grid-section">
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="path_to_facade_photo.jpg" alt="Фасадный декор">
+                </div>
+                <h3>Фасадный декор</h3>
+                <ul class="accent-list">
+                    <li>Колонны и пилястры</li>
+                    <li>Базы и капители</li>
+                    <li>Молдинги и карнизы</li>
+                    <li>Межэтажные деления</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="path_to_granite_photo.jpg" alt="Искусственный гранит">
+                </div>
+                <h3>Работа с гранитом</h3>
+                <p>Собственное производство изделий из искусственного гранита:</p>
+                <ul class="accent-list">
+                    <li>Облицовка ступеней</li>
+                    <li>Входные группы</li>
+                    <li>Цокольная отделка</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="img-placeholder">
+                    <img src="path_to_windows_photo.jpg" alt="Окна и арки">
+                </div>
+                <h3>Окна и интерьер</h3>
+                <ul class="accent-list">
+                    <li>Арочные и сложные формы</li>
+                    <li>Подоконники и откосы</li>
+                    <li>Внутренние молдинги</li>
+                    <li>Иллюминация и подсветка</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <section id="facades" class="section">
-        <h2 style="text-align: center; margin-bottom: 50px; font-size: 3rem;">Производство и Монтаж</h2>
-        <div class="facade-grid">
-            <div class="facade-card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="Окна">
-                <div class="facade-content">
-                    <h3>Окна и Карнизы</h3>
-                    <ul>
-                        <li>Обрамление проемов</li>
-                        <li>Подоконники и сандрики</li>
-                        <li>Сложные формы окон</li>
-                    </ul>
-                </div>
+    <section>
+        <div class="card" style="border-left: 5px solid var(--gold);">
+            <h3>Монтажные работы</h3>
+            <p>Выполняем полный цикл работ: от проектирования архитектурных узлов до финальной установки и подключения подсветки. Мы гарантируем долговечность каждого крепления.</p>
+        </div>
+    </section>
+
+    <a href="#portfolio" class="btn-gallery">Посмотреть выполненные работы (Фото)</a>
+
+    <section>
+        <h2>Сотрудничество</h2>
+        <div class="partner-cols">
+            <div class="partner-col">
+                <h4>Инвесторам и спонсорам</h4>
+                <p>Мы открыты к масштабированию и новым вложениям. Готовы предоставить бизнес-план и техническую документацию.</p>
+                <a href="mailto:invest@example.com" style="color: var(--gold);">Связаться с отделом развития</a>
             </div>
-            <div class="facade-card">
-                <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=800" alt="Колонны">
-                <div class="facade-content">
-                    <h3>Входные группы</h3>
-                    <ul>
-                        <li>Ступени из гранита</li>
-                        <li>Массивные колонны</li>
-                        <li>Балюстрады и перила</li>
-                    </ul>
-                </div>
+            
+            <div class="partner-col">
+                <h4>Дизайнерам</h4>
+                <p>Специальные условия, предоставление 3D-моделей наших изделий и техническая поддержка ваших проектов.</p>
+                <a href="https://t.me/your_contact" style="color: var(--gold);">Чат для дизайнеров</a>
+            </div>
+
+            <div class="partner-col">
+                <h4>С кем мы работаем</h4>
+                <p>Застройщики, частные архитекторы, студии дизайна и муниципальные заказчики.</p>
             </div>
         </div>
     </section>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #888;">
+    &copy; 2026 Atlantic's Decor. Официальный запуск проекта.
+</footer>
+
 </body>
 </html>
